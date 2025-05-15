@@ -15,3 +15,7 @@ docker run -d --name postgres-container --network app-network -p 5432:5432 -e PO
 
 on peut tester la base de données avec la commande suivante :
 docker exec -it postgres-container psql -U usr -d db -c "SELECT \* FROM departments;"
+
+1-4 Why do we need a multistage build? And explain each step of this dockerfile.
+
+reponse :
