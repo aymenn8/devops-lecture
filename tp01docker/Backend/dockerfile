@@ -2,7 +2,14 @@ FROM eclipse-temurin:21-jdk-alpine
 
 WORKDIR /app
 
-COPY Main.class .
+# Copy the Java source file instead of pre-compiled class
+COPY Main.java .
 
+# Compile the Java file
+RUN javac Main.java
+
+# Expose port 8080 for the HTTP server
+EXPOSE 8080
+
+# Run the compiled Java class
 CMD ["java", "Main"]
-
